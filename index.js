@@ -21,6 +21,7 @@ function sumar(w, y = 0) {
 
   return w + y;
 }
+
 console.log(sumar());
 console.log(sumar(9, 6));
 //objetos //valores dentro de objetos>propiedad
@@ -60,3 +61,22 @@ const nuevoProducto = {
 };
 
 console.log(nuevoProducto); //sin (ya que no es function)
+
+//MANIPULACION DE DOM --DOCUMENTO GENERADO BY HTML
+//Document propiedad para acceder al documento
+title = document.createElement("h1");
+title.innerText = "Hola mundo con JS";
+
+button = document.createElement("button");
+button.innerText = "clickeame";
+
+//event handler interacciones que el nvegador puede escuchar
+
+button.addEventListener("click", () => {
+  button.innerText = "clickeado"
+  title.innerText = "Texto actualizado con JS"
+  //texto interno, texto de la etiqueta
+});
+document.body.append(title); //append es adjuntar
+//propiedad body del documento adjuntar funcion titulo
+document.body.append(button);
