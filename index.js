@@ -81,7 +81,7 @@ button.addEventListener("click", () => {
 document.body.append(title); //append es adjuntar
 //propiedad body del documento adjuntar funcion titulo
 document.body.append(button);
-
+//objeto azul, funcion o propiedad morado
 const usuario = {
   name: "Joe",
   age: 30,
@@ -95,7 +95,8 @@ function creaTitle(usuario) {
 //a las propiedades no se les asigna (), solo a las funciones
 //hola.propiedad = , hola.funcion(valorOp)
 //INNERHTML ES CUANDO LA FUNCION CONTIENE HTML </>
-document.body.innerHTML = creaTitle(usuario);
+//EL INNER A MENOS QUE SE SUME, SUSTITUIRA TODO
+document.body.innerHTML += creaTitle(usuario);
 //Arrays [] js{}
 //DESTRUCTORING
 
@@ -104,6 +105,7 @@ function start() {
 }
 
 console.log(start());
+
 
 const boton = document.createElement("button");
 boton.innerText = "botoneame";
@@ -120,11 +122,20 @@ const returnObject = () => ({ nombre: "Messi" });
 const { nombre } = returnObject();
 console.log(nombre);
 
+const background = "blue"
+const color = "white"
 const botonsitoito = document.createElement("button");
 botonsitoito.innerText = "holaButon";
+botonsitoito.style = 
+
 const botonsitoitoState = false;
 botonsitoito.addEventListener("click", () => {
-  botonsitoitoState===true ? alert("Es verdadero") : alert("es falso");
-});
+  /* botonsitoitoState === true ? alert("Es verdadero") : alert("es falso"); */
 
+  if(botonsitoitoState){
+    alert()
+  }
+});
+//SIEMPRE SOLO SE LLAMA AL CONST BOTON
+//FUNCION AZUL(),METODO MORADO() PROPIEDAD AZUL=
 document.body.append(botonsitoito);
