@@ -45,6 +45,7 @@ const user = {
   },
   active: true,
 };
+
 console.log(user.address.ciudad);
 console.log(user.active);
 console.log(user.enviarCorreo()); //Dentro de la funcion sin () para solo que se vea, y con () para ejecutarla
@@ -73,10 +74,57 @@ button.innerText = "clickeame";
 //event handler interacciones que el nvegador puede escuchar
 
 button.addEventListener("click", () => {
-  button.innerText = "clickeado"
-  title.innerText = "Texto actualizado con JS"
+  button.innerText = "clickeado";
+  title.innerText = "Texto actualizado con JS";
   //texto interno, texto de la etiqueta
 });
 document.body.append(title); //append es adjuntar
 //propiedad body del documento adjuntar funcion titulo
 document.body.append(button);
+
+const usuario = {
+  name: "Joe",
+  age: 30,
+};
+//SE DESTRUCTURA CON {} Y SE ESPERA UN OBJETO QUE TENGA ESE VALOR
+function creaTitle(usuario) {
+  //"" porque es elemento html
+  const { name, age } = usuario;
+  return "<h1> El nombre del usuario es: " + name + "</h1>";
+}
+//a las propiedades no se les asigna (), solo a las funciones
+//hola.propiedad = , hola.funcion(valorOp)
+//INNERHTML ES CUANDO LA FUNCION CONTIENE HTML </>
+document.body.innerHTML = creaTitle(usuario);
+//Arrays [] js{}
+//DESTRUCTORING
+
+function start() {
+  return "empezando";
+}
+
+console.log(start());
+
+const boton = document.createElement("button");
+boton.innerText = "botoneame";
+
+boton.addEventListener("click", function () {
+  alert("clickeado");
+});
+
+/* TODOS LOS CAMBIOS SE VAN SUMANDO A LA CONSTANTE */
+
+document.body.append(boton);
+
+const returnObject = () => ({ nombre: "Messi" });
+const { nombre } = returnObject();
+console.log(nombre);
+
+const botonsitoito = document.createElement("button");
+botonsitoito.innerText = "holaButon";
+const botonsitoitoState = false;
+botonsitoito.addEventListener("click", () => {
+  botonsitoitoState===true ? alert("Es verdadero") : alert("es falso");
+});
+
+document.body.append(botonsitoito);
