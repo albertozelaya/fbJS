@@ -1,3 +1,9 @@
+import { suma, multiply, active, points, title } from "./add.js";
+
+//SIEMPRE SE IMPORTA DESTRUCTORY
+//./ CUAANDO ESTA AL LADO
+// ../ CUANDO ESTA AFUERA
+//CADA QUE  ../../ SE SALE DE UNA CARPETA
 //funciones
 
 function hello() {
@@ -126,16 +132,71 @@ const background = "blue"
 const color = "white"
 const botonsitoito = document.createElement("button");
 botonsitoito.innerText = "holaButon";
-botonsitoito.style = 
 
-const botonsitoitoState = false;
+//``ES PARA ESCRIBIR STRINGS
+const btnAutorizado = true;
+//`${PARA VALOR DE JS}`
+botonsitoito.style = `background: ${btnAutorizado? background:'red'}; color: ${color};`
+
 botonsitoito.addEventListener("click", () => {
-  /* botonsitoitoState === true ? alert("Es verdadero") : alert("es falso"); */
+  /* btnAutorizado === true ? alert("Es verdadero") : alert("es falso"); */
 
-  if(botonsitoitoState){
-    alert()
-  }
+  if(!btnAutorizado){
+    alert("es verdadero")
+  }else alert("es falso")
 });
 //SIEMPRE SOLO SE LLAMA AL CONST BOTON
 //FUNCION AZUL(),METODO MORADO() PROPIEDAD AZUL=
 document.body.append(botonsitoito);
+//OBJ= {COLOR:"SI"} ARRAY()=>{} FUNCION(){} METODO ARRAY =[]
+const names = ['Ryan', 'Joe', 'Marco']
+for (let i = 0; i < names.length; i++) {
+  const element = names[i];
+  console.log(element);
+}
+//FUNCION() PARAMETRO = METODO(EVENTO OPCIONAL,FUNCION)
+const newNames = names.map(function (name) {
+  return `hola ${name}`
+})
+//EL FIND ES LO MISMO PERO DENTRO SE PONE UNA CONDICION SOLO DA EL VALOR
+const buscarNames =names.find(function (name) {
+  if(name === "Ryan") return name
+})
+//FILTER CREA UN NUEVO ARREGLO A PARTIR DE LA CONDICION
+const filterNames =names.filter(function (name) {
+  if(name !== "Ryan") return name
+})
+//SE PUEDE != Y !== PERO NO !===
+//EL MAP TIENE QUE RETORNAR CONST = METODO.map(fAnonima(){return RETORNO})
+
+const newArrNames = ["Marcos", "Pablo", "Jon"]
+//METODO AZU()L FUNCION TAMBIEN AZUL() PROPIEDAD ROJO
+function hola(){
+  return "hola"
+}
+document.body
+console.log(hola);
+
+console.log(newNames);
+console.log(names);
+console.log(buscarNames);
+//CONCAT ES METODO QUE UNE DOS ARRAYS
+console.log(names.concat(newArrNames));
+//SPREAD OPERATOR CONCATENAR ES SUMAR O UNIR ...OBJ
+//[ARREGLOS, ...ElementosARREGLO]
+console.log([...names,...newArrNames]);
+
+const objeto1 = {
+  name: "Ryan",
+  lastName: "Robles",
+}
+const address = {
+  street: "main street 123",
+  city: "Tegus",
+}
+//EN UN OBJETO NORMAL SOLO {} //SOLO LOS UNE PERO SIGUEN EXISTIENDO
+const userInfo = {
+  ...objeto1, ...address,
+}
+console.log(userInfo);
+//EMASCRIPT MODULES
